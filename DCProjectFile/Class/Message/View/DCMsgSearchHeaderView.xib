@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DCMsgSearchHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uLE-KX-spz">
+                    <rect key="frame" x="15" y="3" width="363" height="44"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入关键词进行搜索" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JjY-Tu-gIc">
+                            <rect key="frame" x="12" y="0.0" width="304" height="44"/>
+                            <color key="textColor" name="TextColor"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                        </textField>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_search" translatesAutoresizingMaskIntoConstraints="NO" id="ITU-Ud-gcL">
+                            <rect key="frame" x="328" y="13" width="17" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="17.670000000000002" id="Pnm-mO-OF8"/>
+                                <constraint firstAttribute="width" constant="17" id="pfR-lb-3wO"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ITU-Ud-gcL" firstAttribute="centerY" secondItem="uLE-KX-spz" secondAttribute="centerY" id="4eN-SG-wSl"/>
+                        <constraint firstAttribute="bottom" secondItem="JjY-Tu-gIc" secondAttribute="bottom" id="EL7-7Y-ylm"/>
+                        <constraint firstAttribute="trailing" secondItem="ITU-Ud-gcL" secondAttribute="trailing" constant="18" id="Jft-dr-41o"/>
+                        <constraint firstItem="JjY-Tu-gIc" firstAttribute="top" secondItem="uLE-KX-spz" secondAttribute="top" id="eO8-T9-N3d"/>
+                        <constraint firstItem="ITU-Ud-gcL" firstAttribute="leading" secondItem="JjY-Tu-gIc" secondAttribute="trailing" constant="12" id="hF2-5G-f0t"/>
+                        <constraint firstItem="JjY-Tu-gIc" firstAttribute="leading" secondItem="uLE-KX-spz" secondAttribute="leading" constant="12" id="qsj-Rh-a6p"/>
+                        <constraint firstAttribute="height" constant="44" id="uyZ-8i-Oy8"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="BackgroundColor"/>
+            <constraints>
+                <constraint firstItem="uLE-KX-spz" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Jhb-9F-NYP"/>
+                <constraint firstItem="uLE-KX-spz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="ij0-IQ-WU1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="uLE-KX-spz" secondAttribute="trailing" constant="15" id="k0e-36-bAQ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="textField" destination="JjY-Tu-gIc" id="LES-eg-LuM"/>
+            </connections>
+            <point key="canvasLocation" x="131" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icon_search" width="16.666666030883789" height="17.666666030883789"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.9570000171661377" green="0.98400002717971802" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.063000001013278961" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

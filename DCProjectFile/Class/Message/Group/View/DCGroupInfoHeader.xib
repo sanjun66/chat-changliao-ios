@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DCGroupInfoHeader">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="352"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fdc-yx-tmo">
+                    <rect key="frame" x="0.0" y="344" width="393" height="8"/>
+                    <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="8" id="yG0-eK-peV"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzY-CW-eAp">
+                    <rect key="frame" x="50" y="284" width="293" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="XAX-qD-4VE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="查看更多&gt;">
+                        <color key="titleColor" name="SubColor"/>
+                    </state>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6TG-p5-zjz">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="284"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Edy-1d-LUh">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Fdc-yx-tmo" firstAttribute="top" secondItem="zzY-CW-eAp" secondAttribute="bottom" id="0f9-Da-ML1"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Fdc-yx-tmo" secondAttribute="trailing" id="56q-2B-U5g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zzY-CW-eAp" secondAttribute="trailing" constant="50" id="IJQ-qQ-gLD"/>
+                <constraint firstItem="6TG-p5-zjz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="JeL-Fi-pfS"/>
+                <constraint firstAttribute="bottom" secondItem="Fdc-yx-tmo" secondAttribute="bottom" id="gA4-SB-XVk"/>
+                <constraint firstItem="zzY-CW-eAp" firstAttribute="top" secondItem="6TG-p5-zjz" secondAttribute="bottom" id="hcx-dU-0nr"/>
+                <constraint firstItem="Fdc-yx-tmo" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mx8-qK-IZI"/>
+                <constraint firstItem="zzY-CW-eAp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="qT8-12-56S"/>
+                <constraint firstItem="6TG-p5-zjz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="rMb-cv-sbf"/>
+                <constraint firstItem="6TG-p5-zjz" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="u61-YT-44n"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="checkAllBtn" destination="zzY-CW-eAp" id="ctf-xg-K4B"/>
+                <outlet property="checkAllHeight" destination="XAX-qD-4VE" id="y9A-au-Ofq"/>
+                <outlet property="collectionView" destination="6TG-p5-zjz" id="NO6-K4-9vd"/>
+            </connections>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="SubColor">
+            <color red="0.52549019607843139" green="0.54117647058823526" blue="0.60392156862745094" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "rc_conversation_list_msg_sending.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "rc_conversation_list_msg_sending@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "rc_conversation_list_msg_sending@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

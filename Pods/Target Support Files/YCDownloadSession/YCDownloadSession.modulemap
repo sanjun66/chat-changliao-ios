@@ -1,0 +1,6 @@
+framework module YCDownloadSession {
+  umbrella header "YCDownloadSession-umbrella.h"
+
+  export *
+  module * { export * }
+}

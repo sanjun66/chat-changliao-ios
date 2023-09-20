@@ -1,0 +1,220 @@
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// 第三方
+#import <UIKit/UIKit.h>
+#import <CoreServices/CoreServices.h>
+#import <SDWebImage.h>
+#import <SDWebImageWebPCoder.h>
+#import <Masonry.h>
+#import <AFNetworking.h>
+#import <YYKit.h>
+#import <IQKeyboardManager.h>
+#import <MJRefresh.h>
+#import <JXCategoryView.h>
+#import <JXPagerView.h>
+#import <JXPagerListRefreshView.h>
+#import <HXPhotoPicker.h>
+#import <LYEmptyViewHeader.h>
+
+#import <SocketRocket.h>
+#import <BGFMDB.h>
+
+//==================================
+// 分类
+#import "NSString+Additions.h"
+#import "UITextView+Placeholder.h"
+#import "UIColor+Additions.h"
+#import "UIImage+Additions.h"
+#import "UIImage+Extension.h"
+#import "UIView+Additions.h"
+#import "MBProgressHUD+Tips.h"
+
+//=================================
+// 工具类
+#import "DCTools.h"
+#import "DCPreviewPhotoManager.h"
+#import "DCRequestManager.h"
+#import "DCReachabilityManager.h"
+#import "DCUserManager.h"
+#import "DCStatusDefine.h"
+#import "DCStoreModel.h"
+#import "DCDefineHeader.h"
+#import "DCFileUploadManager.h"
+#import "DCWebKitVC.h"
+#import "DCOssConfigModel.h"
+#import "MIUAES.h"
+#import <AWSS3/AWSS3.h>
+#import <AWSS3/AWSS3TransferUtility.h>
+#import "DCVersionModel.h"
+
+
+//=================================
+// 消息类
+#import "DCUserInfo.h"
+#import "DCTextView.h"
+#import "DCMessageModel.h"
+#import "DCMessageCell.h"
+#import "DCConversationModel.h"
+#import "DCSocketClient.h"
+#import "DCSocketClient+MsgSend.h"
+#import "DCSocketClient+MsgReceive.h"
+#import "DCVoicePlayer.h"
+#import "DCVoiceRecorder.h"
+#import "DCMessageManager.h"
+#import "DCFileManager.h"
+#import "DCStatusDefine.h"
+#import "DCGroupDataModel.h"
+//=================================
+//
+#import "DCTabBarController.h"
+#import "DCCallManager.h"
+#import <Quickblox/Quickblox.h>
+#import <QuickbloxWebRTC/QuickbloxWebRTC.h>
+#import <RongIMLib/RongIMLib.h>
+
+//MARK: - 尺寸相关
+#define isIphoneX ({\
+BOOL isiPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+UIWindow *window = [UIApplication sharedApplication].delegate.window;\
+if (window.safeAreaInsets.bottom > 0.0) {\
+isiPhoneX = YES;\
+}\
+}\
+isiPhoneX;\
+})
+
+
+#define kStatusBarHeight         ( ( ![[UIApplication sharedApplication] isStatusBarHidden] ) ? [[UIApplication sharedApplication] statusBarFrame].size.height : (isIphoneX?44.f:20.f))
+
+#define kBarNavHeight 44.0f
+
+#define kNavHeight (kStatusBarHeight + kBarNavHeight)
+
+#define kTabBarHeight (isIphoneX ? 83.0f:49.0f)
+
+#define kBottomSafe (isIphoneX? 34.0f:0.0f)
+
+
+#define HEIGHT_SCALE(h) (h) * (kScreenHeight/667.f)
+
+#define WIDTH_SCALE(w) (w) * (kScreenWidth/375.f)
+
+#define WIDTH360_SCALE(w) (w) * (kScreenWidth/360.f)
+
+
+//MARK: - 字体相关
+#define kFontSize(a)    [UIFont systemFontOfSize:a]
+#define kBoldSize(a)    [UIFont boldSystemFontOfSize:a]
+#define kNameSize(a,b)  [UIFont fontWithName:a size:b]
+
+
+/// 文字消息大小
+#define kTextFontSize 15
+/*
+ "PingFangHK-
+ "PingFangSC-Light",
+ "PingFangSC-Medium",
+ "PingFangSC-Regular",
+ "PingFangSC-Semibold",
+ "PingFangSC-Thin",
+ "PingFangSC-Ultralight",
+ "PingFangTC-
+ */
+
+
+
+//MARK: - 颜色相关
+#define RGB(r,g,b)    [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f)blue:((float) b / 255.0f) alpha:1.0f]
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define HEX(hex)      [UIColor colorWithHexString:hex]
+#define HEXA(hex, a)  [UIColor colorWithHexString:hex alpha:a]
+
+#define kBlackColor         [UIColor blackColor]
+#define kWhiteColor         [UIColor whiteColor]
+#define kRedColor           [UIColor redColor]
+#define kClearColor         [UIColor clearColor]
+
+#define kBackgroundColor    HEX(@"#F4FBFE")
+#define kMainColor          HEX(@"#26DD9A")
+#define kTextTitColor       HEX(@"#001038")
+#define kTextSubColor       HEX(@"#868A9A")
+
+#define HEXCOLOR(rgbValue)                                                                                             \
+[UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16)) / 255.0                                               \
+                green:((float)((rgbValue & 0xFF00) >> 8)) / 255.0                                                  \
+                 blue:((float)(rgbValue & 0xFF)) / 255.0                                                           \
+                alpha:1.0]
+
+
+#define kNormalBorderColor HEX(@"#CFDDE3")
+#define KSelectBorderColor HEX(@"#26DD9A")
+#define kNormalBackColor HEX(@"#EFFFF9")
+#define KSelectBackColor HEX(@"#F3F9FB")
+
+
+
+//MARK: - 系统相关
+#define DCLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+#define kBundleVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]
+
+#define kAppVersion    [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"]
+
+#define kAppBundleID   [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]
+
+#define DCWeakSelf __weak typeof(self) weakSelf = self;
+
+#define DCStrongSelf(a) typeof(a) strongSelf = a;
+
+
+//MARK: - 圆角
+#define DCRadius(view, rads)\
+\
+view.layer.cornerRadius = rads;\
+view.layer.masksToBounds = YES;
+
+
+#define DCBezier(view, corners, rads)\
+\
+{[view layoutIfNeeded];\
+UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:view.bounds byRoundingCorners:corners cornerRadii:CGSizeMake(rads, rads)];\
+CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];\
+maskLayer.frame = view.bounds;\
+maskLayer.path = maskPath.CGPath;\
+view.layer.mask = maskLayer;\
+}
+
+#define kPlaceholderImage [UIImage imageWithColor:UIColor.lightGrayColor]
+
+//MARK: - 用户信息
+#define kUser [[DCUserManager sharedManager] userModel]
+// APP 配置
+#define kUrlPre @"https://weilian.site/"
+
+#define kSocketPre @"wss://weilian.site/wss"
+
+#define kSqliteName @"WeiLian_Message"
+
+#define kDefaultUserName @"畅聊用户"
+
+#define kAppName [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleDisplayName"]
+
+// 账号配置
+#define kJpushAppKey @"97c48c0af13a79ee695b4f08"
+
+#define kQBAppId 101658
+#define kQBAuthKey @"khLRzzpkhvQukWD"
+#define kQBAuthSecret @"ugMT5RxV74Ub2P-"
+#define kQBAccountKey @"XgZWsvgxmpBwQmZAwSvr"
+
+#define kAesKey @"hl9NaOeq75FGQB6W"
+#define kAesIv  @"hl9NaOeq75FGQB6W"
+
+// 加密开关
+#define SECRET YES
+
+#endif /* PrefixHeader_pch */

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DCMsgForwardCheckHeader">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eH2-qj-0yd">
+                    <rect key="frame" x="16" y="59.666666666666664" width="377" height="0.6666666666666643"/>
+                    <color key="backgroundColor" name="LineColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="AQH-DN-RWa"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6V-lk-Gd0">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="59.666666666666664"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="friendClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="vh8-K0-aUV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bea-2P-0UU">
+                    <rect key="frame" x="0.0" y="60.333333333333343" width="393" height="59.666666666666657"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <connections>
+                        <action selector="groupClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="hp0-dN-VSd"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择群聊" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSD-es-nW4">
+                    <rect key="frame" x="16" y="79" width="73.666666666666671" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" name="TextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="选择联系人" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHv-3y-6cb">
+                    <rect key="frame" x="16" y="19" width="92" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" name="TextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" name="BackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Bea-2P-0UU" secondAttribute="trailing" id="3dW-2L-iyq"/>
+                <constraint firstItem="WSD-es-nW4" firstAttribute="leading" secondItem="HHv-3y-6cb" secondAttribute="leading" id="53J-6X-cyf"/>
+                <constraint firstAttribute="bottom" secondItem="Bea-2P-0UU" secondAttribute="bottom" id="9aj-D3-qji"/>
+                <constraint firstAttribute="trailing" secondItem="eH2-qj-0yd" secondAttribute="trailing" id="EA7-eq-CHJ"/>
+                <constraint firstItem="eH2-qj-0yd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Hk1-JT-2tP"/>
+                <constraint firstItem="Bea-2P-0UU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JwR-By-ZNF"/>
+                <constraint firstItem="eH2-qj-0yd" firstAttribute="top" secondItem="s6V-lk-Gd0" secondAttribute="bottom" id="L6v-qr-GNe"/>
+                <constraint firstItem="WSD-es-nW4" firstAttribute="centerY" secondItem="Bea-2P-0UU" secondAttribute="centerY" id="N6c-tW-eAB"/>
+                <constraint firstItem="HHv-3y-6cb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="UKC-JQ-DwX"/>
+                <constraint firstItem="s6V-lk-Gd0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="XzU-qD-MBI"/>
+                <constraint firstItem="eH2-qj-0yd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="cac-H5-aK5"/>
+                <constraint firstItem="Bea-2P-0UU" firstAttribute="top" secondItem="eH2-qj-0yd" secondAttribute="bottom" id="hzU-wP-Dd7"/>
+                <constraint firstAttribute="trailing" secondItem="s6V-lk-Gd0" secondAttribute="trailing" id="qiK-q2-TZz"/>
+                <constraint firstItem="Bea-2P-0UU" firstAttribute="height" secondItem="s6V-lk-Gd0" secondAttribute="height" id="rfI-oh-Ahe"/>
+                <constraint firstItem="HHv-3y-6cb" firstAttribute="centerY" secondItem="s6V-lk-Gd0" secondAttribute="centerY" id="yui-Mm-08X"/>
+                <constraint firstItem="s6V-lk-Gd0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="z78-7k-fhE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-77.099236641221367" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BackgroundColor">
+            <color red="0.9570000171661377" green="0.98400002717971802" blue="0.99599999189376831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="LineColor">
+            <color red="0.81199997663497925" green="0.86699998378753662" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.063000001013278961" blue="0.2199999988079071" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
